@@ -310,7 +310,7 @@
 
   /* ---------- Contact form ---------- */
   const form = $("#contactForm");
-  const EMAIL = "sunnykumar.dev@gmail.com";
+  const EMAIL = "kumarsunny33460@gmail.com";
 
   const setError = (name, msg) => {
     const field = form?.querySelector(`[name="${name}"]`)?.closest(".field");
