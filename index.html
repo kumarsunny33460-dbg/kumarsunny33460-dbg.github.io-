@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sunny Kumar — Full-Stack & DevOps Engineer</title>
+<meta name="description" content="Portfolio of Sunny Kumar — B.Tech CSE student building production-grade cloud applications: Flask microservices, Docker/Kubernetes infrastructure, Terraform on AWS, and application security tooling." />
+<meta name="author" content="Sunny Kumar" />
+<meta name="theme-color" content="#070a14" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sunny Kumar — Full-Stack & DevOps Engineer" />
+<meta property="og:description" content="Cloud-native monitoring platforms, security tooling and AI/ML experiments. Built with Flask, Docker, Kubernetes, Terraform and AWS." />
+<meta property="og:image" content="assets/profile.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='.5' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%2334d399'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='64' font-family='Segoe UI,Helvetica,Arial' font-size='44' font-weight='700' fill='%23071018' text-anchor='middle'%3ESK%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <div class="preloader__ring"><span></span><span></span><span></span></div>
+    <p class="preloader__text">Loading<span class="dots"></span></p>
+  </div>
+</div>
+
+<!-- ============ AMBIENT BACKGROUND ============ -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__grid"></div>
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="orb orb--3"></div>
+  <div class="bg__noise"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#home" class="brand" aria-label="Sunny Kumar — home">
+      <span class="brand__mark">SK</span>
+      <span class="brand__text">Sunny<em>.</em>Kumar</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#github" class="nav__link">GitHub</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <div class="nav__progress"><span id="navProgress"></span></div>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Switch colour theme" title="Toggle theme">
+        <svg class="ico ico--sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/>
+        </svg>
+        <svg class="ico ico--moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+      <a class="btn btn--sm btn--primary nav__cta" href="#contact">
+        Hire Me
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container hero__inner">
+
+    <div class="hero__content">
+      <div class="pill reveal">
+        <span class="pill__dot"></span>
+        Open to internships &amp; full-time roles
+      </div>
+
+      <h1 class="hero__title reveal" data-delay="80">
+        <span class="hero__hello">Hi, I'm</span>
+        <span class="grad-text">Sunny Kumar</span>
+      </h1>
+
+      <div class="hero__role reveal" data-delay="160">
+        <span class="hero__role-prefix">I build</span>
+        <span class="typewriter" id="typewriter" aria-live="polite"></span>
+        <span class="caret" aria-hidden="true"></span>
+      </div>
+
+      <p class="hero__desc reveal" data-delay="240">
+        B.Tech Computer Science student (3rd Year, India) specialising in
+        <strong>cloud-native backends, DevOps automation</strong> and
+        <strong>application security</strong>. I design systems that survive
+        real traffic — Dockerised, container-orchestrated, observable and
+        covered by tests.
+      </p>
+
+      <div class="hero__cta reveal" data-delay="320">
+        <a href="#projects" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 2h9l-2.5 8H6z"/></svg>
+          View Projects
+        </a>
+        <a href="https://github.com/kumarsunny33460-dbg" target="_blank" rel="noopener" class="btn btn--ghost">
+          <span class="si-mono si-github" aria-hidden="true"></span>
+          GitHub
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Get in touch
+        </a>
+      </div>
+
+      <div class="hero__social reveal" data-delay="400">
+        <a href="https://github.com/kumarsunny33460-dbg" target="_blank" rel="noopener" class="soc" aria-label="GitHub" title="GitHub"><span class="si-mono si-github" aria-hidden="true"></span></a>
+        <a href="https://www.linkedin.com/in/sunny-kumar-4a0104332" target="_blank" rel="noopener" class="soc" aria-label="LinkedIn" title="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" /></a>
+        <a href="mailto:sunnykumar.dev@gmail.com" class="soc" aria-label="Email" title="Email"><img src="assets/icons/gmail.svg" alt="Email" width="20" height="20" /></a>
+        <a href="https://github.com/kumarsunny33460-dbg?tab=repositories" target="_blank" rel="noopener" class="soc" aria-label="Repositories" title="Repositories"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H8v16H5.5A1.5 1.5 0 0 1 4 18.5zM10 4h5a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5zM10 4v16"/></svg></a>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal" data-delay="200">
+      <div class="photo-wrap" id="photoWrap">
+        <div class="photo-ring"></div>
+        <div class="photo-glow"></div>
+        <img src="assets/profile.png" alt="Portrait of Sunny Kumar" class="photo" width="443" height="443" />
+        <div class="badge badge--a" data-float="1"><img src="assets/icons/docker.svg" alt="Docker" width="18" height="18" /><span>Docker</span></div>
+        <div class="badge badge--b" data-float="2"><img src="assets/icons/kubernetes.svg" alt="Kubernetes" width="18" height="18" /><span>K8s</span></div>
+        <div class="badge badge--c" data-float="3"><img src="assets/icons/python.svg" alt="Python" width="18" height="18" /><span>Python</span></div>
+        <div class="badge badge--d" data-float="4"><img src="assets/icons/amazonwebservices-lt.svg" alt="AWS" width="18" height="18" /><span>AWS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero__stats reveal">
+    <div class="stat">
+      <span class="stat__num" data-count="14">0</span>
+      <span class="stat__label">Repositories</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="4">0</span>
+      <span class="stat__label">Flagship Projects</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="3">0</span>
+      <span class="stat__label">Internships</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="205" data-suffix="+">0</span>
+      <span class="stat__label">Automated Tests</span>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+    <span class="scroll-cue__mouse"><i></i></span>
+    <span class="scroll-cue__text">Scroll</span>
+  </a>
+</section>
+
+<!-- ============ TECH MARQUEE ============ -->
+<section class="marquee-wrap" aria-label="Technologies I work with">
+  <div class="marquee" id="marquee">
+    <div class="marquee__track">
+      <!-- duplicated by JS -->
+    </div>
+  </div>
+  <div class="marquee marquee--reverse">
+    <div class="marquee__track" id="marquee2">
+      <!-- duplicated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">01 — About</span>
+      <h2 class="sec-head__title">Engineering with <span class="grad-text">purpose</span></h2>
+      <p class="sec-head__sub">A quick look at who I am, how I work, and the kind of problems I gravitate toward.</p>
+    </header>
+
+    <div class="about__grid">
+      <div class="about__story reveal">
+        <p class="lead">
+          I'm <strong>Sunny Kumar</strong> — a Computer Science &amp; Engineering
+          undergraduate who fell in love with the moment an idea becomes a
+          running system.
+        </p>
+        <p>
+          My work lives at the intersection of <em>backend engineering</em> and
+          <em>platform engineering</em>. I write Python services with Flask and
+          SQLAlchemy, package them with Docker, run them on Kubernetes with Helm
+          charts, provision the cloud with Terraform, and instrument everything
+          with Prometheus and Grafana. I care about the unglamorous parts:
+          CSRF protection, rate limiting, secret rotation, test coverage and
+          CI that fails loudly.
+        </p>
+        <p>
+          Three internships shaped that approach — <strong>CodeAlpha</strong>
+          (cloud computing), <strong>Prodigy Infotech</strong> (artificial
+          intelligence) and <strong>CodSoft</strong> (Python development). Between
+          them they taught me that shipping matters more than theorising, and
+          that a project is only finished when it can be run by someone else.
+        </p>
+
+        <div class="about__facts">
+          <div class="fact">
+            <span class="fact__k">Degree</span>
+            <span class="fact__v">B.Tech — Computer Science &amp; Engineering</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Based in</span>
+            <span class="fact__v">India · Open to remote &amp; on-site</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Focus</span>
+            <span class="fact__v">Cloud-native apps · DevOps · AppSec</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Currently</span>
+            <span class="fact__v">3rd Year B.Tech, building &amp; deploying</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="about__cards">
+        <article class="mini-card reveal" data-delay="80">
+          <div class="mini-card__ico"><img src="assets/icons/docker.svg" alt="" width="24" height="24" /></div>
+          <h3>Production, not prototypes</h3>
+          <p>Every project ships with a Dockerfile, CI pipeline, health checks and a documented runbook.</p>
+        </article>
+        <article class="mini-card reveal" data-delay="160">
+          <div class="mini-card__ico"><img src="assets/icons/githubactions.svg" alt="" width="24" height="24" /></div>
+          <h3>Automate the boring parts</h3>
+          <p>Lint, test, container-build and deploy pipelines that gate every merge on <code>main</code>.</p>
+        </article>
+        <article class="mini-card reveal" data-delay="240">
+          <div class="mini-card__ico">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2.6 4.5 5.8v5.6c0 4.6 3.1 8.4 7.5 9.9 4.4-1.5 7.5-5.3 7.5-9.9V5.8L12 2.6Z"/>
+              <path d="m9 12 2.2 2.2L15.4 10"/>
+            </svg>
+          </div>
+          <h3>Secure by default</h3>
+          <p>Encrypted at rest, RBAC, CSRF guards, rate limiting and no secrets committed to git — ever.</p>
+        </article>
+        <article class="mini-card reveal" data-delay="320">
+          <div class="mini-card__ico"><img src="assets/icons/sonarqube.svg" alt="" width="24" height="24" /></div>
+          <h3>Tests that prove behaviour</h3>
+          <p>Security and reliability rules are asserted directly, not assumed to work.</p>
+        </article>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">02 — Skills</span>
+      <h2 class="sec-head__title">The <span class="grad-text">toolkit</span></h2>
+      <p class="sec-head__sub">A working stack built across three internships and a pile of side projects.</p>
+    </header>
+
+    <div class="skill-tabs reveal" role="tablist" aria-label="Skill categories">
+      <button class="skill-tab is-active" data-filter="all" role="tab">All</button>
+      <button class="skill-tab" data-filter="lang" role="tab">Languages</button>
+      <button class="skill-tab" data-filter="backend" role="tab">Backend</button>
+      <button class="skill-tab" data-filter="devops" role="tab">Cloud &amp; DevOps</button>
+      <button class="skill-tab" data-filter="data" role="tab">Data &amp; AI</button>
+      <button class="skill-tab" data-filter="db" role="tab">Databases</button>
+      <button class="skill-tab" data-filter="tools" role="tab">Tools</button>
+    </div>
+
+    <div class="skills__grid" id="skillsGrid">
+      <!-- Skill rows injected here as static markup below -->
+      <div class="skill-col">
+        <h3 class="skill-col__title"><span class="skill-col__bar"></span>Languages</h3>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/python.svg" alt="" width="20" height="20" />Python</span><span class="skill__pct">95%</span></div>
+          <div class="skill__bar"><i style="--w:95%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/javascript.svg" alt="" width="20" height="20" />JavaScript</span><span class="skill__pct">85%</span></div>
+          <div class="skill__bar"><i style="--w:85%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/html5.svg" alt="" width="20" height="20" />HTML5</span><span class="skill__pct">90%</span></div>
+          <div class="skill__bar"><i style="--w:90%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/css3-lt.svg" alt="" width="20" height="20" />CSS3</span><span class="skill__pct">88%</span></div>
+          <div class="skill__bar"><i style="--w:88%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name">SQL</span><span class="skill__pct">82%</span></div>
+          <div class="skill__bar"><i style="--w:82%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name">Java</span><span class="skill__pct">70%</span></div>
+          <div class="skill__bar"><i style="--w:70%"></i></div>
+        </div>
+        <div class="skill" data-cat="lang">
+          <div class="skill__head"><span class="skill__name">C / C++</span><span class="skill__pct">75%</span></div>
+          <div class="skill__bar"><i style="--w:75%"></i></div>
+        </div>
+      </div>
+
+      <div class="skill-col">
+        <h3 class="skill-col__title"><span class="skill-col__bar"></span>Backend &amp; Frameworks</h3>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/flask.svg" alt="" width="20" height="20" />Flask</span><span class="skill__pct">92%</span></div>
+          <div class="skill__bar"><i style="--w:92%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/fastapi.svg" alt="" width="20" height="20" />FastAPI</span><span class="skill__pct">72%</span></div>
+          <div class="skill__bar"><i style="--w:72%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/sqlalchemy.svg" alt="" width="20" height="20" />SQLAlchemy</span><span class="skill__pct">85%</span></div>
+          <div class="skill__bar"><i style="--w:85%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name">REST API Design</span><span class="skill__pct">90%</span></div>
+          <div class="skill__bar"><i style="--w:90%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/jinja-lt.svg" alt="" width="20" height="20" />Jinja2 Templates</span><span class="skill__pct">84%</span></div>
+          <div class="skill__bar"><i style="--w:84%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/gunicorn.svg" alt="" width="20" height="20" />Gunicorn</span><span class="skill__pct">80%</span></div>
+          <div class="skill__bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="skill" data-cat="backend">
+          <div class="skill__head"><span class="skill__name">Authentication &amp; RBAC</span><span class="skill__pct">86%</span></div>
+          <div class="skill__bar"><i style="--w:86%"></i></div>
+        </div>
+      </div>
+
+      <div class="skill-col">
+        <h3 class="skill-col__title"><span class="skill-col__bar"></span>Cloud, DevOps &amp; Security</h3>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/docker.svg" alt="" width="20" height="20" />Docker</span><span class="skill__pct">92%</span></div>
+          <div class="skill__bar"><i style="--w:92%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/kubernetes.svg" alt="" width="20" height="20" />Kubernetes</span><span class="skill__pct">80%</span></div>
+          <div class="skill__bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/terraform.svg" alt="" width="20" height="20" />Terraform</span><span class="skill__pct">78%</span></div>
+          <div class="skill__bar"><i style="--w:78%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/amazonwebservices-lt.svg" alt="" width="20" height="20" />AWS</span><span class="skill__pct">80%</span></div>
+          <div class="skill__bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/githubactions.svg" alt="" width="20" height="20" />GitHub Actions</span><span class="skill__pct">88%</span></div>
+          <div class="skill__bar"><i style="--w:88%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/prometheus.svg" alt="" width="20" height="20" />Prometheus &amp; Grafana</span><span class="skill__pct">82%</span></div>
+          <div class="skill__bar"><i style="--w:82%"></i></div>
+        </div>
+        <div class="skill" data-cat="devops">
+          <div class="skill__head"><span class="skill__name">AppSec (AES-GCM, PBKDF2, CSRF)</span><span class="skill__pct">85%</span></div>
+          <div class="skill__bar"><i style="--w:85%"></i></div>
+        </div>
+      </div>
+
+      <div class="skill-col">
+        <h3 class="skill-col__title"><span class="skill-col__bar"></span>Data, AI &amp; Tooling</h3>
+        <div class="skill" data-cat="data">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/tensorflow.svg" alt="" width="20" height="20" />TensorFlow</span><span class="skill__pct">78%</span></div>
+          <div class="skill__bar"><i style="--w:78%"></i></div>
+        </div>
+        <div class="skill" data-cat="data">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/pytorch.svg" alt="" width="20" height="20" />PyTorch</span><span class="skill__pct">72%</span></div>
+          <div class="skill__bar"><i style="--w:72%"></i></div>
+        </div>
+        <div class="skill" data-cat="data">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/huggingface.svg" alt="" width="20" height="20" />Hugging Face Transformers</span><span class="skill__pct">75%</span></div>
+          <div class="skill__bar"><i style="--w:75%"></i></div>
+        </div>
+        <div class="skill" data-cat="data">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/numpy-lt.svg" alt="" width="20" height="20" />NumPy &amp; Pandas</span><span class="skill__pct">80%</span></div>
+          <div class="skill__bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="skill" data-cat="data">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/scikitlearn.svg" alt="" width="20" height="20" />scikit-learn</span><span class="skill__pct">70%</span></div>
+          <div class="skill__bar"><i style="--w:70%"></i></div>
+        </div>
+        <div class="skill" data-cat="tools">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/git.svg" alt="" width="20" height="20" />Git &amp; GitHub</span><span class="skill__pct">92%</span></div>
+          <div class="skill__bar"><i style="--w:92%"></i></div>
+        </div>
+        <div class="skill" data-cat="tools">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/linux.svg" alt="" width="20" height="20" />Linux &amp; Shell</span><span class="skill__pct">82%</span></div>
+          <div class="skill__bar"><i style="--w:82%"></i></div>
+        </div>
+        <div class="skill" data-cat="tools">
+          <div class="skill__head"><span class="skill__name"><img src="assets/icons/pytest.svg" alt="" width="20" height="20" />pytest · Ruff · mypy</span><span class="skill__pct">88%</span></div>
+          <div class="skill__bar"><i style="--w:88%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-cloud reveal">
+      <h3 class="tech-cloud__title">Also in my toolkit</h3>
+      <div class="tech-cloud__list">
+        <span class="chip"><img src="assets/icons/mongodb.svg" alt="" width="16" height="16" />MongoDB Atlas</span>
+        <span class="chip"><img src="assets/icons/postgresql.svg" alt="" width="16" height="16" />PostgreSQL</span>
+        <span class="chip"><img src="assets/icons/redis.svg" alt="" width="16" height="16" />Redis</span>
+        <span class="chip"><img src="assets/icons/sqlite-lt.svg" alt="" width="16" height="16" />SQLite</span>
+        <span class="chip"><img src="assets/icons/nginx.svg" alt="" width="16" height="16" />Nginx</span>
+        <span class="chip"><img src="assets/icons/helm-lt.svg" alt="" width="16" height="16" />Helm</span>
+        <span class="chip"><img src="assets/icons/amazonec2.svg" alt="" width="16" height="16" />EC2</span>
+        <span class="chip"><img src="assets/icons/amazonrds.svg" alt="" width="16" height="16" />RDS</span>
+        <span class="chip"><img src="assets/icons/amazons3.svg" alt="" width="16" height="16" />S3</span>
+        <span class="chip"><span class="si-mono si-otel" aria-hidden="true"></span>OpenTelemetry</span>
+        <span class="chip"><img src="assets/icons/elasticsearch-lt.svg" alt="" width="16" height="16" />Elasticsearch</span>
+        <span class="chip"><img src="assets/icons/bootstrap.svg" alt="" width="16" height="16" />Bootstrap</span>
+        <span class="chip"><img src="assets/icons/jupyter.svg" alt="" width="16" height="16" />Jupyter</span>
+        <span class="chip"><img src="assets/icons/opencv.svg" alt="" width="16" height="16" />OpenCV</span>
+        <span class="chip"><img src="assets/icons/openai-lt.svg" alt="" width="16" height="16" />OpenAI</span>
+        <span class="chip"><img src="assets/icons/ansible.svg" alt="" width="16" height="16" />Ansible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">03 — Projects</span>
+      <h2 class="sec-head__title">Pinned <span class="grad-text">work</span></h2>
+      <p class="sec-head__sub">The four repositories pinned on my GitHub profile — each one deployed, tested and documented.</p>
+    </header>
+
+    <div class="projects">
+
+      <!-- FEATURED: CloudPulse -->
+      <article class="proj proj--featured reveal" data-tilt>
+        <div class="proj__body">
+          <div class="proj__top">
+            <div class="proj__icon proj__icon--lg"><img src="assets/icons/prometheus.svg" alt="" width="28" height="28" /></div>
+            <div class="proj__badges">
+              <span class="tag tag--accent">Featured</span>
+              <span class="tag">DevOps Major Project</span>
+              <span class="tag tag--live"><i></i> Live</span>
+            </div>
+          </div>
+
+          <h3 class="proj__title">CloudPulse</h3>
+          <p class="proj__desc">
+            A cloud-native <strong>application monitoring &amp; incident management
+            platform</strong>. It registers services, probes them on a schedule,
+            records every health check, opens and auto-resolves incidents when
+            availability drops, tracks releases, and exposes the whole picture
+            through a dashboard, a REST API, CSV exports and a Prometheus endpoint.
+          </p>
+
+          <ul class="proj__features">
+            <li><span class="tick">✓</span>Scheduled health checks with status-code spec, keyword matching, latency &amp; uptime tracking</li>
+            <li><span class="tick">✓</span>Auto incident creation with de-duplication, debounce, severity, SLA countdown &amp; MTTR stats</li>
+            <li><span class="tick">✓</span>Deployment tracking with one-click rollback and deployment↔incident correlation</li>
+            <li><span class="tick">✓</span>Terraform on AWS (VPC, ECR, RDS, ALB, ECS, IAM, S3) + Helm chart + Kustomize overlays</li>
+            <li><span class="tick">✓</span>Prometheus, Alertmanager, Grafana, Loki &amp; Promtail observability stack</li>
+            <li><span class="tick">✓</span>5-job GitHub Actions CI: lint, infra validation, tests, security scan, image build</li>
+          </ul>
+
+          <div class="proj__stack">
+            <span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" />Flask</span>
+            <span class="chip"><img src="assets/icons/postgresql.svg" alt="" width="16" height="16" />PostgreSQL</span>
+            <span class="chip"><img src="assets/icons/docker.svg" alt="" width="16" height="16" />Docker</span>
+            <span class="chip"><img src="assets/icons/kubernetes.svg" alt="" width="16" height="16" />Kubernetes</span>
+            <span class="chip"><img src="assets/icons/terraform.svg" alt="" width="16" height="16" />Terraform</span>
+            <span class="chip"><img src="assets/icons/amazonwebservices-lt.svg" alt="" width="16" height="16" />AWS</span>
+            <span class="chip"><img src="assets/icons/prometheus.svg" alt="" width="16" height="16" />Prometheus</span>
+            <span class="chip"><img src="assets/icons/grafana.svg" alt="" width="16" height="16" />Grafana</span>
+          </div>
+
+          <div class="proj__links">
+            <a class="btn btn--sm btn--primary" href="https://cloudpulse-4d2q.onrender.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+              Live Demo
+            </a>
+            <a class="btn btn--sm btn--ghost" href="https://github.com/kumarsunny33460-dbg/CloudPulse" target="_blank" rel="noopener">
+              <span class="si-mono si-github" aria-hidden="true"></span> Source
+            </a>
+          </div>
+        </div>
+
+        <!-- Decorative dashboard mock -->
+        <div class="proj__visual" aria-hidden="true">
+          <div class="mock">
+            <div class="mock__bar">
+              <span class="mock__dots"><i></i><i></i><i></i></span>
+              <span class="mock__url">cloudpulse · fleet overview</span>
+            </div>
+            <div class="mock__kpis">
+              <div class="mock__kpi"><b>99.98%</b><span>Uptime</span></div>
+              <div class="mock__kpi"><b>142<span>ms</span></b><span>Latency</span></div>
+              <div class="mock__kpi mock__kpi--warn"><b>2</b><span>Open incidents</span></div>
+            </div>
+            <svg class="mock__chart" viewBox="0 0 300 90" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#22d3ee" stop-opacity=".45"/>
+                  <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,62 L30,54 L60,58 L90,44 L120,48 L150,34 L180,38 L210,26 L240,30 L270,18 L300,22 L300,90 L0,90 Z" fill="url(#cg)"/>
+              <path d="M0,62 L30,54 L60,58 L90,44 L120,48 L150,34 L180,38 L210,26 L240,30 L270,18 L300,22" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="mock__rows">
+              <div class="mock__row"><i class="dot dot--up"></i> payments-api <span class="mock__bar2" style="--w:99%"></span></div>
+              <div class="mock__row"><i class="dot dot--up"></i> notification-gateway <span class="mock__bar2" style="--w:97%"></span></div>
+              <div class="mock__row"><i class="dot dot--warn"></i> batch-worker <span class="mock__bar2" style="--w:74%"></span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="proj__grid">
+
+        <!-- SQLShield -->
+        <article class="proj reveal" data-tilt>
+          <div class="proj__top">
+            <div class="proj__icon"><img src="assets/icons/sonarqube.svg" alt="" width="24" height="24" /></div>
+            <div class="proj__badges">
+              <span class="tag tag--accent">Security</span>
+              <span class="tag tag--live"><i></i> Live</span>
+            </div>
+          </div>
+          <h3 class="proj__title">SQLShield</h3>
+          <p class="proj__desc">
+            A production-grade security platform that <strong>detects SQL injection
+            attacks</strong>, encrypts sensitive records and monitors every security
+            event. Scored detection engine, envelope encryption and constant-time
+            capability verification.
+          </p>
+          <ul class="proj__features">
+            <li><span class="tick">✓</span>18 scored detection rules with normalisation &amp; obfuscation handling, field-scoped to avoid false positives</li>
+            <li><span class="tick">✓</span>AES-256-GCM envelope encryption with versioned keys and zero-downtime rotation</li>
+            <li><span class="tick">✓</span>PBKDF2-HMAC-SHA256 (600k iterations) + <code>hmac.compare_digest</code> capability codes with lockout</li>
+            <li><span class="tick">✓</span>Versioned <code>/api/v1</code> with a shared JSON envelope, request IDs and structured JSON logs</li>
+            <li><span class="tick">✓</span>205 pytest cases, Ruff, mypy, pre-commit, Docker &amp; 4 cloud deployment manifests</li>
+          </ul>
+          <div class="proj__stack">
+            <span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" />Flask</span>
+            <span class="chip"><img src="assets/icons/mongodb.svg" alt="" width="16" height="16" />MongoDB Atlas</span>
+            <span class="chip"><img src="assets/icons/docker.svg" alt="" width="16" height="16" />Docker</span>
+            <span class="chip"><img src="assets/icons/pytest.svg" alt="" width="16" height="16" />pytest</span>
+            <span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" />Cryptography</span>
+          </div>
+          <div class="proj__links">
+            <a class="btn btn--sm btn--primary" href="https://sqlshield.onrender.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+              Live Demo
+            </a>
+            <a class="btn btn--sm btn--ghost" href="https://github.com/kumarsunny33460-dbg/CodeAlpha_SQLInjectionDetection" target="_blank" rel="noopener">
+              <span class="si-mono si-github" aria-hidden="true"></span> Source
+            </a>
+          </div>
+        </article>
+
+        <!-- Data Redundancy Removal System -->
+        <article class="proj reveal" data-tilt>
+          <div class="proj__top">
+            <div class="proj__icon"><img src="assets/icons/mongodb.svg" alt="" width="24" height="24" /></div>
+            <div class="proj__badges">
+              <span class="tag">Full-Stack</span>
+              <span class="tag tag--live"><i></i> Live</span>
+            </div>
+          </div>
+          <h3 class="proj__title">Data Redundancy Removal System</h3>
+          <p class="proj__desc">
+            A cloud-based web application that <strong>detects, manages and removes
+            duplicate records</strong> — matching on email and phone — so redundant
+            data never enters the database in the first place.
+          </p>
+          <ul class="proj__features">
+            <li><span class="tick">✓</span>Duplicate detection on email &amp; phone before every insert</li>
+            <li><span class="tick">✓</span>Full CRUD over MongoDB Atlas with search by name, email or phone</li>
+            <li><span class="tick">✓</span>One-click CSV export of the verified record set</li>
+            <li><span class="tick">✓</span>Deployed on Render with a Gunicorn production server</li>
+          </ul>
+          <div class="proj__stack">
+            <span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" />Flask</span>
+            <span class="chip"><img src="assets/icons/mongodb.svg" alt="" width="16" height="16" />MongoDB Atlas</span>
+            <span class="chip"><img src="assets/icons/html5.svg" alt="" width="16" height="16" />HTML5</span>
+            <span class="chip"><img src="assets/icons/bootstrap.svg" alt="" width="16" height="16" />Bootstrap</span>
+          </div>
+          <div class="proj__links">
+            <a class="btn btn--sm btn--primary" href="https://codealpha-dataredundancyremovalsystem-420a.onrender.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>
+              Live Demo
+            </a>
+            <a class="btn btn--sm btn--ghost" href="https://github.com/kumarsunny33460-dbg/CodeAlpha_DataRedundancyRemovalSystem" target="_blank" rel="noopener">
+              <span class="si-mono si-github" aria-hidden="true"></span> Source
+            </a>
+          </div>
+        </article>
+
+        <!-- Cloud Chatbot -->
+        <article class="proj reveal" data-tilt>
+          <div class="proj__top">
+            <div class="proj__icon"><img src="assets/icons/python.svg" alt="" width="24" height="24" /></div>
+            <div class="proj__badges">
+              <span class="tag">AI Assistant</span>
+            </div>
+          </div>
+          <h3 class="proj__title">Cloud-Based Chatbot</h3>
+          <p class="proj__desc">
+            An interactive conversational web app built with Flask and MongoDB Atlas
+            that stores chat history in the cloud — and adds the touches that make
+            it feel like a real product.
+          </p>
+          <ul class="proj__features">
+            <li><span class="tick">✓</span>AI-powered conversational interface with persistent history</li>
+            <li><span class="tick">✓</span>Voice input via the browser Speech Recognition API</li>
+            <li><span class="tick">✓</span>Dark mode theme toggle with persisted preference</li>
+            <li><span class="tick">✓</span>Built-in calculator and fully responsive layout</li>
+          </ul>
+          <div class="proj__stack">
+            <span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" />Python</span>
+            <span class="chip"><img src="assets/icons/flask.svg" alt="" width="16" height="16" />Flask</span>
+            <span class="chip"><img src="assets/icons/mongodb.svg" alt="" width="16" height="16" />MongoDB Atlas</span>
+            <span class="chip"><img src="assets/icons/javascript.svg" alt="" width="16" height="16" />JavaScript</span>
+          </div>
+          <div class="proj__links">
+            <a class="btn btn--sm btn--ghost" href="https://github.com/kumarsunny33460-dbg/CodeAlpha_CloudBasedChatbot" target="_blank" rel="noopener">
+              <span class="si-mono si-github" aria-hidden="true"></span> Source
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">04 — Experience</span>
+      <h2 class="sec-head__title">Journey &amp; <span class="grad-text">credentials</span></h2>
+      <p class="sec-head__sub">Internships where the projects came from, plus the education behind them.</p>
+    </header>
+
+    <div class="timeline">
+      <div class="tl-item reveal" data-delay="60">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2026 — Present</span>
+          <h3 class="tl-role">Cloud Computing Intern</h3>
+          <p class="tl-org"><img src="assets/icons/docker.svg" alt="" width="16" height="16" /> CodeAlpha</p>
+          <p class="tl-desc">
+            Built and deployed four production-style cloud applications. Led
+            <strong>CloudPulse</strong> — a full monitoring &amp; incident platform
+            with Terraform, Kubernetes, Helm and Prometheus — and hardened
+            <strong>SQLShield</strong> with a scored detection engine, envelope
+            encryption and a 205-case test suite.
+          </p>
+          <div class="tl-tags">
+            <span class="chip sm">Docker</span><span class="chip sm">Kubernetes</span>
+            <span class="chip sm">Terraform</span><span class="chip sm">AWS</span>
+            <span class="chip sm">Flask</span><span class="chip sm">MongoDB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-delay="140">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2025</span>
+          <h3 class="tl-role">Artificial Intelligence Intern</h3>
+          <p class="tl-org"><img src="assets/icons/tensorflow.svg" alt="" width="16" height="16" /> Prodigy Infotech</p>
+          <p class="tl-desc">
+            Worked through five applied AI tasks: fine-tuning <strong>GPT-2</strong>
+            with Hugging Face Transformers, building a <strong>conditional GAN</strong>
+            for image generation, implementing <strong>neural style transfer</strong>
+            with TensorFlow Hub, and writing a <strong>Markov chain</strong> text
+            generator at word and character level.
+          </p>
+          <div class="tl-tags">
+            <span class="chip sm">TensorFlow</span><span class="chip sm">PyTorch</span>
+            <span class="chip sm">Transformers</span><span class="chip sm">OpenCV</span>
+            <span class="chip sm">Jupyter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-delay="220">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <span class="tl-date">2025</span>
+          <h3 class="tl-role">Python Development Intern</h3>
+          <p class="tl-org"><img src="assets/icons/python.svg" alt="" width="16" height="16" /> CodSoft</p>
+          <p class="tl-desc">
+            Delivered four Python tasks spanning a rule-based chatbot, an
+            unbeatable <strong>Tic-Tac-Toe AI</strong> built on the minimax
+            algorithm with alpha-beta pruning, and data analysis notebooks.
+            Strengthened my grasp of algorithms and clean Python.
+          </p>
+          <div class="tl-tags">
+            <span class="chip sm">Python</span><span class="chip sm">DSA</span>
+            <span class="chip sm">Pandas</span><span class="chip sm">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-delay="300">
+        <div class="tl-dot tl-dot--edu"></div>
+        <div class="tl-card">
+          <span class="tl-date">2023 — 2026</span>
+          <h3 class="tl-role">B.Tech, Computer Science &amp; Engineering</h3>
+          <p class="tl-org"><img src="assets/icons/apachemaven.svg" alt="" width="16" height="16" /> Undergraduate · India</p>
+          <p class="tl-desc">
+            Core coursework in data structures &amp; algorithms, DBMS, operating
+            systems, computer networks and software engineering. Currently in the
+            3rd year, deepening specialisation in cloud and security.
+          </p>
+          <div class="tl-tags">
+            <span class="chip sm">DSA</span><span class="chip sm">DBMS</span>
+            <span class="chip sm">Networks</span><span class="chip sm">OS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GITHUB ============ -->
+<section class="section" id="github">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">05 — GitHub</span>
+      <h2 class="sec-head__title">Open source, <span class="grad-text">in public</span></h2>
+      <p class="sec-head__sub">Every project listed here is public, with its source, docs and CI visible.</p>
+    </header>
+
+    <div class="gh">
+      <div class="gh__card reveal" data-tilt>
+        <div class="gh__head">
+          <img src="assets/profile.png" alt="Sunny Kumar" class="gh__avatar" width="90" height="90" />
+          <div>
+            <h3 class="gh__name">Sunny Kumar</h3>
+            <p class="gh__handle">@kumarsunny33460-dbg</p>
+            <p class="gh__bio">B.Tech CSE (3rd Year) · Cloud-native apps, DevOps automation &amp; application security.</p>
+          </div>
+        </div>
+        <div class="gh__stats">
+          <div class="gh__stat"><b data-count="14">0</b><span>Repositories</span></div>
+          <div class="gh__stat"><b data-count="4">0</b><span>Pinned</span></div>
+          <div class="gh__stat"><b data-count="3">0</b><span>Internships</span></div>
+          <div class="gh__stat"><b data-count="5">0</b><span>Languages</span></div>
+        </div>
+        <a class="btn btn--sm btn--ghost" href="https://github.com/kumarsunny33460-dbg" target="_blank" rel="noopener">
+          <span class="si-mono si-github" aria-hidden="true"></span> Visit profile
+        </a>
+      </div>
+
+      <div class="gh__side">
+        <div class="panel reveal" data-delay="80">
+          <h3 class="panel__title">Language distribution <span>pinned repos</span></h3>
+          <div class="langbar" aria-label="Language distribution across pinned repositories">
+            <span style="--c:#3776AB;--w:70%"></span>
+            <span style="--c:#E34F26;--w:14%"></span>
+            <span style="--c:#F7DF1E;--w:7%"></span>
+            <span style="--c:#563D7C;--w:5%"></span>
+            <span style="--c:#8A7B72;--w:4%"></span>
+          </div>
+          <ul class="langlist">
+            <li><i style="--c:#3776AB"></i>Python <b>70%</b></li>
+            <li><i style="--c:#E34F26"></i>HTML <b>14%</b></li>
+            <li><i style="--c:#F7DF1E"></i>JavaScript <b>7%</b></li>
+            <li><i style="--c:#563D7C"></i>CSS <b>5%</b></li>
+            <li><i style="--c:#8A7B72"></i>HCL / Docker <b>4%</b></li>
+          </ul>
+        </div>
+
+        <div class="panel reveal" data-delay="160">
+          <h3 class="panel__title">What my repos demonstrate</h3>
+          <ul class="checklist">
+            <li><span class="tick">✓</span>Backend APIs with blueprints, services &amp; repositories</li>
+            <li><span class="tick">✓</span>CI/CD with lint, tests, security scan and image build</li>
+            <li><span class="tick">✓</span>Infrastructure as code across AWS, Helm &amp; Kustomize</li>
+            <li><span class="tick">✓</span>Observability: metrics, structured logs, dashboards</li>
+            <li><span class="tick">✓</span>Container hardening: non-root user, read-only FS, health checks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--contact" id="contact">
+  <div class="container">
+    <header class="sec-head reveal">
+      <span class="sec-head__eyebrow">06 — Contact</span>
+      <h2 class="sec-head__title">Let's build <span class="grad-text">something</span></h2>
+      <p class="sec-head__sub">Open to internship and full-time engineering roles. My inbox is always open.</p>
+    </header>
+
+    <div class="contact">
+      <div class="contact__info reveal">
+        <a class="contact__card" href="mailto:sunnykumar.dev@gmail.com">
+          <div class="contact__ico"><img src="assets/icons/gmail.svg" alt="" width="22" height="22" /></div>
+          <div>
+            <span class="contact__k">Email</span>
+            <span class="contact__v">sunnykumar.dev@gmail.com</span>
+          </div>
+          <svg class="contact__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+        <a class="contact__card" href="https://github.com/kumarsunny33460-dbg" target="_blank" rel="noopener">
+          <div class="contact__ico"><span class="si-mono si-github" aria-hidden="true"></span></div>
+          <div>
+            <span class="contact__k">GitHub</span>
+            <span class="contact__v">github.com/kumarsunny33460-dbg</span>
+          </div>
+          <svg class="contact__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+        <a class="contact__card" href="https://www.linkedin.com/in/sunny-kumar-4a0104332" target="_blank" rel="noopener">
+          <div class="contact__ico"><img src="assets/icons/linkedin.svg" alt="" width="22" height="22" /></div>
+          <div>
+            <span class="contact__k">LinkedIn</span>
+            <span class="contact__v">in/sunny-kumar-4a0104332</span>
+          </div>
+          <svg class="contact__arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+
+        <div class="contact__note">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+          <p>Responding within 24 hours. Attachments and repo links welcome.</p>
+        </div>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="cName">Name</label>
+          <input type="text" id="cName" name="name" placeholder="Your name" required autocomplete="name" />
+          <span class="err" data-err="name"></span>
+        </div>
+        <div class="field">
+          <label for="cEmail">Email</label>
+          <input type="email" id="cEmail" name="email" placeholder="you@company.com" required autocomplete="email" />
+          <span class="err" data-err="email"></span>
+        </div>
+        <div class="field">
+          <label for="cSubject">Subject</label>
+          <input type="text" id="cSubject" name="subject" placeholder="Internship opportunity / Collaboration" />
+          <span class="err" data-err="subject"></span>
+        </div>
+        <div class="field">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" name="message" rows="5" placeholder="Tell me about the role or the project…" required></textarea>
+          <span class="err" data-err="message"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+          <span class="btn__label">Send message</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/></svg>
+        </button>
+        <p class="form__hint">
+          This opens your default mail client with the message pre-filled — nothing is sent to a third party.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__mark">SK</span>
+      <div>
+        <strong>Sunny Kumar</strong>
+        <span>Full-Stack &amp; DevOps Engineer</span>
+      </div>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer__social">
+      <a href="https://github.com/kumarsunny33460-dbg" target="_blank" rel="noopener" aria-label="GitHub"><span class="si-mono si-github" aria-hidden="true"></span></a>
+      <a href="https://www.linkedin.com/in/sunny-kumar-4a0104332" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="LinkedIn" width="18" height="18" /></a>
+      <a href="mailto:sunnykumar.dev@gmail.com" aria-label="Email"><img src="assets/icons/gmail.svg" alt="Email" width="18" height="18" /></a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year">2026</span> Sunny Kumar. Built from scratch with HTML, CSS &amp; vanilla JS.</p>
+    <p class="footer__made">Made with <span class="heart">♥</span> in India</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
