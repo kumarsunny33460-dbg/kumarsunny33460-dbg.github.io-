@@ -4,7 +4,7 @@ A modern, single-page developer portfolio built with **HTML5, CSS3 and vanilla J
 No frameworks, no build step, no dependencies — open `index.html` and it works.
 
 ---
-🔴 **[Live Portfolio](https://sunnykumar-portfolio-001.netlify.app)**
+🔴 **[Live Portfolio](https://kumarsunny33460-dbg.github.io/)**
 
 ## Highlights
 
